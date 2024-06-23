@@ -1,0 +1,106 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+</head>
+<style>
+
+  *{
+    margin: 0px;
+    padding: 0px;
+  }
+
+  body{
+    background-image: url(./responsible-handsome-male-driver-scooter-with-red-helmet-delivering-pizza.jpg);
+    
+background-image: url(https://img.freepik.com/free-photo/responsible-handsome-male-driver-scooter-with-red-helmet-delivering-pizza_273609-31428.jpg?size=626&ext=jpg&ga=GA1.1.53199620.1699035688&semt=ais_user);
+    background-size: cover;
+  }
+
+  .login{
+   display: block;
+   margin-left: 200px;
+  }
+  input{
+  font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
+  padding: 10px;
+  width: 350px;
+  margin: 2px;
+  border-radius: 10px;
+  text-align: center;
+  border: none;
+  background-color: wheat;
+  }
+
+  button{
+    font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
+    margin-top: 5px;
+    padding: 10px;
+    width: 150px ;
+    background-color: rgb(255, 0, 106);
+    font-weight: bolder;
+    border-radius: 10px;
+    border: none;
+    margin-left: 120px;
+    color: wheat;
+    font-size: 17px;
+  }
+img{
+  width: 160px;
+  height: 80px;
+}
+h1{
+  color: rgb(255, 0, 106);
+}
+.head{
+  font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
+  margin-bottom: 5px;
+  width: 500px;
+  
+}
+.head2{
+  text-align: center;
+}
+
+.cont{
+ 
+  width: 700px;
+  margin-top: 30px;
+}
+</style>
+<body>
+  <div class="logo">
+  <img src="https://seeklogo.com/images/F/foodpanda-logo-551BD51321-seeklogo.com.png" alt="">
+ 
+</div>
+<div class="cont">
+  <div class="login">
+    <div class="head">
+    <h1>Predict Foodpanda Restaurant</h1>
+
+      <h1 class="head2"> Ratings</h1> 
+    </div>
+  
+       <!-- Main Input For Receiving Query to our ML -->
+      <form action="{{ url_for('predict')}}"method="post">
+        <input type="text" name="Online Order" placeholder="Order Online" required="required" /><br>
+          <input type="text" name="Book Table" placeholder="Book Table" required="required" /><br>
+      <input type="text" name="Votes" placeholder="Votes" required="required" /><br>
+          <input type="text" name="Location" placeholder="Location" required="required" /><br>
+          <input type="text" name="Restaurant Type" placeholder="Restaurant Type" required="required" /><br>
+          <input type="text" name="Cuisines" placeholder="Cuisines" required="required" /><br>
+          <input type="text" name="Cost" placeholder="Cost" required="required" /><br>
+          <input type="text" name="Menu Item" placeholder="Menu Item" required="required" /><br>
+  
+          <button type="submit" class="btn btn-primary btn-block btn-large">Predict</button><br>
+      </form>
+  
+     <br>
+     <br>
+     {{ prediction_text }}
+    
+    </div>
+</body>
+</html>
